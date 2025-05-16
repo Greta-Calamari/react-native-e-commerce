@@ -10,8 +10,8 @@ import { s, vs } from "react-native-size-matters"
 import { AppColors } from "../../style/colors"
 
 interface Props {
-  value: string
-  onChangeText: (text: string) => void
+  value?: string
+  onChangeText?: (text: string) => void
   placeholder?: string
   secureTextEntry?: boolean
   keyboardType?: "default" | "email-address" | "numeric" | "phone-pad"

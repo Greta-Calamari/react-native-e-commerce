@@ -1,6 +1,6 @@
-import { Product } from "../types"
+import { CardProps } from "../types"
 
-export const products: Product[] = [
+export const products: CardProps[] = [
   {
     id: 1,
     price: 1199,

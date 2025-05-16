@@ -6,28 +6,17 @@ import { AppColors } from "../../style/colors"
 import { AppFonts } from "../../style/fonts"
 import AppText from "../text/AppText"
 import { FontAwesome } from "@expo/vector-icons"
-
-interface Props {
-  id: number
-  price: number
-  title: string
-  imageURL: string
-  qty: number
-  onDeletePress: (id: number) => void
-  onIncreasePress: (id: number) => void
-  onReducePress: (id: number) => void
-}
+import { CardProps } from "../../types"
 
 export default function CartItem({
   id,
   price,
   title,
   imageURL,
-  qty,
   onDeletePress,
   onIncreasePress,
   onReducePress,
-}: Props) {
+}: CardProps) {
   return (
     <View>
       {/* Image Container */}
@@ -41,11 +30,11 @@ export default function CartItem({
         <AppText style={styles.textPrice}>{price}</AppText>
 
         <View style={styles.qtyContainer}>
-          <Pressable style={styles.iconButton} onPress={onIncreasePress}>
+          <Pressable style={styles.iconButton} onPress={() => onIncreasePress}>
             <FontAwesome name="plus" size={s(10)} color={AppColors.primary} />
           </Pressable>
           <AppText style={styles.textQty}>1</AppText>
-          <Pressable onPress={onReducePress} style={styles.iconButton}>
+          <Pressable onPress={() => onReducePress} style={styles.iconButton}>
             <FontAwesome name="minus" size={s(10)} color={AppColors.primary} />
           </Pressable>
         </View>
@@ -53,7 +42,7 @@ export default function CartItem({
 
       {/* Delete Button Container */}
       <View style={styles.deleteContainer}>
-        <Pressable onPress={onDeletePress} style={styles.deleteButton}>
+        <Pressable onPress={() => onDeletePress} style={styles.deleteButton}>
           <AntDesign name="delete" size={s(14)} color={AppColors.redColor} />
           <AppText style={styles.deleteText}>Delete</AppText>
         </Pressable>
