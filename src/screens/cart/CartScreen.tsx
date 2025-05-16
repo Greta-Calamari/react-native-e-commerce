@@ -1,7 +1,6 @@
-import { StyleSheet, Text, View } from "react-native"
 import React from "react"
+import { StyleSheet, View } from "react-native"
 import HomeHeader from "../../components/headers/HomeHeader"
-import EmptyCart from "./EmptyCart"
 
 export default function CartScreen() {
   return (
